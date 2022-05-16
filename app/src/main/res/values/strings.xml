@@ -13,4 +13,8 @@
     <string name="home_instructions">After pressing start you will start the quest. After each question, a picture of a HvA building is shown. Go to the building and start the next question. At the end, there will be a prize waiting for you!</string>
     <string name="start_quest">Start Quest</string>
 
+    <!--Quiz Fragment-->
+    <string name="confirm">Confirm</string>
+
+
 </resources>

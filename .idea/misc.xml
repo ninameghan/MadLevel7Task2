@@ -3,9 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_building.xml" value="0.1" />
-        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_quiz.xml" value="0.1" />
+        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_building.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/ninam/AndroidStudioProjects/MadLevel7Task2/app/src/main/res/layout/fragment_quiz.xml" value="0.16666666666666666" />
       </map>
     </option>
   </component>

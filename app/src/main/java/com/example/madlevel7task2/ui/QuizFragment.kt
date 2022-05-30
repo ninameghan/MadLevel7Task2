@@ -1,5 +1,6 @@
 package com.example.madlevel7task2.ui
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -47,6 +48,10 @@ class QuizFragment : Fragment() {
 
         observeQuestions()
 
+        binding.progressBar.max = questions.size - 1
+        ObjectAnimator.ofInt(binding.progressBar, "progress", currentQuestionId)
+            .setDuration(2000).start()
+
         viewModel.getQuiz()
 
         binding.btnConfirm.setOnClickListener {
@@ -77,6 +82,8 @@ class QuizFragment : Fragment() {
     }
 
     private fun nextBuilding() {
+        updateProgress()
+
         val currentQuestion = questions[currentQuestionId]
 
         Log.i("current", currentQuestion.question.toString())
@@ -118,5 +125,9 @@ class QuizFragment : Fragment() {
             nextBuilding()
         }
         binding.rgAnswers.clearCheck()
+    }
+
+    private fun updateProgress() {
+        binding.tvProgress.text = "${currentQuestionId + 1}/${questions.size}"
     }
 }

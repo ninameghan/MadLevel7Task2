@@ -46,11 +46,10 @@ class QuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        observeQuestions()
+        binding.progressBar.progress = 0
+        binding.progressBar.max = 100
 
-        binding.progressBar.max = questions.size - 1
-        ObjectAnimator.ofInt(binding.progressBar, "progress", currentQuestionId)
-            .setDuration(2000).start()
+        observeQuestions()
 
         viewModel.getQuiz()
 
@@ -82,6 +81,7 @@ class QuizFragment : Fragment() {
     }
 
     private fun nextBuilding() {
+        Log.i("current", currentQuestionId.toString())
         updateProgress()
 
         val currentQuestion = questions[currentQuestionId]
@@ -129,5 +129,8 @@ class QuizFragment : Fragment() {
 
     private fun updateProgress() {
         binding.tvProgress.text = "${currentQuestionId + 1}/${questions.size}"
+        binding.progressBar.progress = (currentQuestionId + 1)*10
+        Log.i("progress", binding.progressBar.progress.toString())
+//        Log.i("current", (currentQuestionId + 1).toString())
     }
 }

@@ -81,12 +81,10 @@ class QuizFragment : Fragment() {
     }
 
     private fun nextBuilding() {
-        Log.i("current", currentQuestionId.toString())
         updateProgress()
 
         val currentQuestion = questions[currentQuestionId]
 
-        Log.i("current", currentQuestion.question.toString())
         binding.tvQuestion.text = currentQuestion.question
 
         if (currentQuestion.answerOptions != null) {
@@ -130,7 +128,5 @@ class QuizFragment : Fragment() {
     private fun updateProgress() {
         binding.tvProgress.text = "${currentQuestionId + 1}/${questions.size}"
         binding.progressBar.progress = (currentQuestionId + 1)*10
-        Log.i("progress", binding.progressBar.progress.toString())
-//        Log.i("current", (currentQuestionId + 1).toString())
     }
 }

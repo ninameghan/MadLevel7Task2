@@ -61,19 +61,15 @@ class QuizFragment : Fragment() {
 
     private fun observeQuestions() {
 
-        Log.i("QuestionLog", "observeQuestion")
         viewModel.errorText.observe(viewLifecycleOwner) {
             Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
         }
 
         viewModel.questions.observe(viewLifecycleOwner) {
-            Log.i("QuestionLog", "viewmodel")
             currentQuestionId = -1
 
             questions.clear()
             questions.addAll(it)
-
-            Log.i("QuestionLog", questions[0].toString())
 
             currentQuestionId++
             nextBuilding()
@@ -83,6 +79,7 @@ class QuizFragment : Fragment() {
     private fun nextBuilding() {
         val currentQuestion = questions[currentQuestionId]
 
+        Log.i("current", currentQuestion.question.toString())
         binding.tvQuestion.text = currentQuestion.question
 
         if (currentQuestion.answerOptions != null) {
@@ -117,6 +114,7 @@ class QuizFragment : Fragment() {
             findNavController().popBackStack()
         } else {
             Toast.makeText(requireContext(), "Correct!", Toast.LENGTH_SHORT).show()
+            currentQuestionId++
             nextBuilding()
         }
         binding.rgAnswers.clearCheck()

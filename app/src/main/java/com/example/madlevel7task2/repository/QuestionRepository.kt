@@ -34,13 +34,10 @@ class QuestionRepository {
                     .get()
                     .await().documents
 
-                Log.i("data", data.toString())
-
                 for (question in data) {
                     questions.add(question.toObject()!!)
                 }
 
-                Log.i("array", questions.toString())
                 _questions.value = questions
             }
         } catch (e: Exception) {

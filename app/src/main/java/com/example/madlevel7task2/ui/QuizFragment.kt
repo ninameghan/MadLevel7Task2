@@ -88,7 +88,7 @@ class QuizFragment : Fragment() {
         binding.tvQuestion.text = currentQuestion.question
 
         if (currentQuestion.answerOptions != null) {
-            val options = currentQuestion.answerOptions
+            val options = currentQuestion.answerOptions.shuffled()
 
             binding.rbAnswerA.text = options[0]
             binding.rbAnswerB.text = options[1]

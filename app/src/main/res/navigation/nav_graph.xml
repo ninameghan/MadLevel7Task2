@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/HomeFragment"
-        android:name="com.example.madlevel7task2.HomeFragment"
+        android:name="com.example.madlevel7task2.ui.HomeFragment"
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/QuizFragment"
-        android:name="com.example.madlevel7task2.QuizFragment"
+        android:name="com.example.madlevel7task2.ui.QuizFragment"
         android:label="@string/quiz_fragment_label"
         tools:layout="@layout/fragment_quiz">
 
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/BuildingFragment"
-        android:name="com.example.madlevel7task2.BuildingFragment"
+        android:name="com.example.madlevel7task2.ui.BuildingFragment"
         android:label="@string/building_fragment_label"
         tools:layout="@layout/fragment_building">
     </fragment>

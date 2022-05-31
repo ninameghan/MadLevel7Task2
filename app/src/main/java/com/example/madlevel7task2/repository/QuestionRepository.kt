@@ -28,8 +28,8 @@ class QuestionRepository {
         val questions = arrayListOf<Question>()
 
         try {
-            //firestore has support for coroutines via the extra dependency we've added :)
-            withTimeout(30_000) {
+            //firestore has support for coroutines via the extra dependency we've added
+            withTimeout(5_000) {
                 val data = quiz
                     .get()
                     .await().documents

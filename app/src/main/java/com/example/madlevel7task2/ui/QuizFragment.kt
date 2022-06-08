@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.view.get
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
 import com.example.madlevel7task2.R
 import com.example.madlevel7task2.databinding.FragmentQuizBinding
 import com.example.madlevel7task2.model.Question
@@ -85,9 +86,14 @@ class QuizFragment : Fragment() {
 
         val currentQuestion = questions[currentQuestionId]
 
+        //Load image of building
+        Glide.with(requireContext()).load(currentQuestion.buildingUrl).into(binding.ivBuilding)
+
+        binding.tvBuildingName.text = currentQuestion.buildingName
         binding.tvQuestion.text = currentQuestion.question
 
         if (currentQuestion.answerOptions != null) {
+            //shuffle answer options
             val options = currentQuestion.answerOptions.shuffled()
 
             binding.rbAnswerA.text = options[0]
@@ -98,7 +104,6 @@ class QuizFragment : Fragment() {
 
     private fun checkAnswer() {
         val userAnswer = binding.rgAnswers.checkedRadioButtonId
-
         val radio = binding.rgAnswers.findViewById<RadioButton>(userAnswer)
 
         if (userAnswer == -1) {

@@ -16,8 +16,6 @@ class QuestionViewModel(application: Application) : AndroidViewModel(application
 
     val questions: LiveData<List<Question>> = questionRepository.questions
 
-    val createSuccess: LiveData<Boolean> = questionRepository.createSuccess
-
     private val _errorText: MutableLiveData<String> = MutableLiveData()
     val errorText: LiveData<String>
         get() = _errorText

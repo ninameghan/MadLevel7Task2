@@ -21,9 +21,6 @@ class QuestionRepository {
     //the QuizFragment can use this to see if creation succeeded
     private val _createSuccess: MutableLiveData<Boolean> = MutableLiveData()
 
-    val createSuccess: LiveData<Boolean>
-        get() = _createSuccess
-
     suspend fun getQuiz() {
         val questions = arrayListOf<Question>()
 
